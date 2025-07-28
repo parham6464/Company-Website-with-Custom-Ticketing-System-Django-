@@ -24,7 +24,6 @@
   <p align="center">
   <strong>[fa]</strong><br />
 من یک وب‌سایت شرکتی دو‌زبانه طراحی و پیاده‌سازی کرده‌ام که تمامی امکانات لازم برای ثبت سفارش را در اختیار کاربران قرار می‌دهد. در این وب‌سایت، یک سیستم تیکتینگ پیشرفته نیز به‌صورت کامل با استفاده از فریم‌ورک Django توسعه داده شده است. این سیستم تنها برای ارسال پیام نیست، بلکه برای ثبت و مدیریت سفارش‌ها طراحی شده و از به‌روزرسانی لحظه‌ای نیز پشتیبانی می‌کند.
-
     <br/>
     <strong>[EN]</strong><br />
 I developed a bilingual corporate website that includes all the necessary features for placing orders. The site also features an advanced ticketing system, fully built with Django. This system is not just for messaging—it is designed for submitting and managing orders, with real-time updates.
