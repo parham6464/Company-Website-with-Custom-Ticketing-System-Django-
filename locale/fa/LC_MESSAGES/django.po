@@ -1,0 +1,477 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-23 17:18+0430\n"
+"PO-Revision-Date: 2024-08-23 17:19+0000\n"
+"Last-Translator:   <asj6464@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: .\accounts\models.py:21
+msgid "name"
+msgstr ""
+
+#: .\accounts\models.py:22 .\accounts\models.py:41
+msgid "body"
+msgstr "متن"
+
+#: .\accounts\models.py:31
+#, fuzzy
+#| msgid "category"
+msgid "category_post"
+msgstr "دسته بندی"
+
+#: .\accounts\models.py:40
+msgid "title"
+msgstr "عنوان"
+
+#: .\accounts\models.py:60
+msgid "category"
+msgstr "دسته بندی"
+
+#: .\config\settings.py:120
+msgid "English"
+msgstr "انگلیسی"
+
+#: .\config\settings.py:121
+msgid "Persian"
+msgstr "فارسی"
+
+#: .\templates\about.html:47 .\templates\contact.html:42
+#: .\templates\index.html:47 .\templates\portfolio.html:45
+#: .\templates\services.html:42
+#| msgid "aboutnav"
+msgid "blognav"
+msgstr "وبلاگ"
+
+#: .\templates\about.html:48 .\templates\contact.html:43
+#: .\templates\index.html:48 .\templates\portfolio.html:46
+#: .\templates\services.html:43
+msgid "aboutnav"
+msgstr "درباره ما"
+
+#: .\templates\about.html:49 .\templates\contact.html:44
+#: .\templates\index.html:49 .\templates\portfolio.html:47
+#: .\templates\services.html:44
+msgid "homecontact"
+msgstr "تماس با ما"
+
+#: .\templates\about.html:50 .\templates\contact.html:45
+#: .\templates\index.html:50 .\templates\portfolio.html:48
+#: .\templates\services.html:45
+msgid "homeportfolio"
+msgstr "نمونه کارها"
+
+#: .\templates\about.html:51 .\templates\contact.html:46
+#: .\templates\index.html:51 .\templates\portfolio.html:49
+#: .\templates\services.html:46
+msgid "homeserv"
+msgstr "سرویس ها"
+
+#: .\templates\about.html:52 .\templates\contact.html:47
+#: .\templates\index.html:52 .\templates\portfolio.html:50
+#: .\templates\services.html:47
+msgid "homenav"
+msgstr "خانه"
+
+#: .\templates\about.html:58 .\templates\about.html:61
+#: .\templates\contact.html:59 .\templates\contact.html:68
+#: .\templates\portfolio.html:59 .\templates\services.html:56
+msgid "servicespageheaderdirection"
+msgstr "rtl"
+
+#: .\templates\about.html:62
+msgid "aboutusBannerHeader"
+msgstr ""
+
+#: .\templates\about.html:275 .\templates\about.html:296
+#: .\templates\about.html:317 .\templates\about.html:338
+msgid "aboutusbutton"
+msgstr ""
+
+#: .\templates\contact.html:60
+msgid "contactbannerpageheader"
+msgstr ""
+
+#: .\templates\contact.html:74
+msgid "contactpagebodyheader"
+msgstr ""
+
+#: .\templates\contact.html:75
+msgid "contactpagebodycontent1"
+msgstr ""
+
+#: .\templates\contact.html:76
+msgid "contactpagebodycontent2"
+msgstr ""
+
+#: .\templates\contact.html:92
+msgid "messageEmailWarningContact"
+msgstr "ایمیل شما فرمت درستی ندارد"
+
+#: .\templates\contact.html:94
+msgid "messageEmptyWarningContact"
+msgstr "همه ی فیلد ها را پر کنید "
+
+#: .\templates\contact.html:96
+msgid "messageSuccessContact"
+msgstr "پیام شما با موفقیت ارسال شد"
+
+#: .\templates\contact.html:105
+#, fuzzy
+#| msgid "homecontact"
+msgid "contactName"
+msgstr "تماس با ما"
+
+#: .\templates\contact.html:110
+#, fuzzy
+#| msgid "homecontact"
+msgid "contactEmail"
+msgstr "تماس با ما"
+
+#: .\templates\contact.html:115
+msgid "contactSubject"
+msgstr ""
+
+#: .\templates\contact.html:120
+msgid "contactMessage"
+msgstr ""
+
+#: .\templates\contact.html:124
+msgid "contactSubmit"
+msgstr ""
+
+#: .\templates\index.html:72
+msgid "textheaderimage1"
+msgstr ""
+
+#: .\templates\index.html:73
+msgid "textbodyimage1"
+msgstr ""
+
+#: .\templates\index.html:79
+msgid "textheaderimage2"
+msgstr ""
+
+#: .\templates\index.html:80
+msgid "textbodyimage2"
+msgstr ""
+
+#: .\templates\index.html:86
+msgid "textheaderimage3"
+msgstr ""
+
+#: .\templates\index.html:87
+msgid "textbodyimage3"
+msgstr ""
+
+#: .\templates\index.html:96
+msgid "welcometextheader"
+msgstr ""
+
+#: .\templates\index.html:97
+msgid "welcometextbody"
+msgstr ""
+
+#: .\templates\index.html:103
+msgid "servicesheader1"
+msgstr ""
+
+#: .\templates\index.html:104
+msgid "servicesbody1"
+msgstr ""
+
+#: .\templates\index.html:105 .\templates\index.html:109
+#: .\templates\index.html:113 .\templates\index.html:117
+msgid "moreservices"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\index.html:107
+msgid "servicesheader2"
+msgstr ""
+
+#: .\templates\index.html:108
+msgid "servicesbody2"
+msgstr ""
+
+#: .\templates\index.html:111
+msgid "servicesheader3"
+msgstr ""
+
+#: .\templates\index.html:112
+msgid "servicesbody3"
+msgstr ""
+
+#: .\templates\index.html:115
+msgid "servicesheader4"
+msgstr ""
+
+#: .\templates\index.html:116
+msgid "servicesbody4"
+msgstr ""
+
+#: .\templates\index.html:131
+msgid "whyustextmain"
+msgstr ""
+
+#: .\templates\index.html:133
+msgid "whyusparagraph1"
+msgstr ""
+
+#: .\templates\index.html:134
+msgid "whyusparagraph2"
+msgstr ""
+
+#: .\templates\index.html:138
+msgid "soloutionheader"
+msgstr ""
+
+#: .\templates\index.html:148
+msgid "soloution1header"
+msgstr ""
+
+#: .\templates\index.html:155
+msgid "soloution1body"
+msgstr ""
+
+#: .\templates\index.html:163
+msgid "soloution2header"
+msgstr ""
+
+#: .\templates\index.html:169
+msgid "soloution2body"
+msgstr ""
+
+#: .\templates\index.html:177
+msgid "soloution3header"
+msgstr ""
+
+#: .\templates\index.html:183
+msgid "soloution3body"
+msgstr ""
+
+#: .\templates\index.html:191
+msgid "soloution4header"
+msgstr ""
+
+#: .\templates\index.html:197
+msgid "soloution4body"
+msgstr ""
+
+#: .\templates\index.html:221
+#, fuzzy
+#| msgid "moreservices"
+msgid "servicesheader"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\index.html:235
+msgid "servicescard1header"
+msgstr ""
+
+#: .\templates\index.html:238 .\templates\index.html:260
+#: .\templates\index.html:282 .\templates\index.html:304
+msgid "servicescardprice"
+msgstr ""
+
+#: .\templates\index.html:257
+msgid "servicescard2header"
+msgstr ""
+
+#: .\templates\index.html:279
+msgid "servicescard3header"
+msgstr ""
+
+#: .\templates\index.html:301
+msgid "servicescard4header"
+msgstr ""
+
+#: .\templates\index.html:335
+msgid "clientscommentsheader"
+msgstr ""
+
+#: .\templates\index.html:381
+msgid "teamheadermainpage"
+msgstr ""
+
+#: .\templates\index.html:382
+msgid "teambodymainpage"
+msgstr ""
+
+#: .\templates\index.html:395
+msgid "teamMemberCard1Name"
+msgstr ""
+
+#: .\templates\index.html:396
+msgid "teamMemberCard1Position"
+msgstr ""
+
+#: .\templates\index.html:397
+msgid "teamMemberCard1body"
+msgstr ""
+
+#: .\templates\index.html:398 .\templates\index.html:414
+#: .\templates\index.html:430 .\templates\index.html:446
+msgid "teamMemberButton"
+msgstr ""
+
+#: .\templates\index.html:411
+msgid "teamMemberCard2Name"
+msgstr ""
+
+#: .\templates\index.html:412
+msgid "teamMemberCard2Position"
+msgstr ""
+
+#: .\templates\index.html:413
+msgid "teamMemberCard2body"
+msgstr ""
+
+#: .\templates\index.html:427
+msgid "teamMemberCard3Name"
+msgstr ""
+
+#: .\templates\index.html:428
+msgid "teamMemberCard3Position"
+msgstr ""
+
+#: .\templates\index.html:429
+msgid "teamMemberCard3body"
+msgstr ""
+
+#: .\templates\index.html:443
+msgid "teamMemberCard4Name"
+msgstr ""
+
+#: .\templates\index.html:444
+msgid "teamMemberCard4Position"
+msgstr ""
+
+#: .\templates\index.html:445
+msgid "teamMemberCard4body"
+msgstr ""
+
+#: .\templates\portfolio.html:60
+msgid "portfoliobannerheadertext"
+msgstr ""
+
+#: .\templates\portfolio.html:74
+msgid "portfolioheaderpage"
+msgstr ""
+
+#: .\templates\portfolio.html:79
+#, fuzzy
+#| msgid "homeportfolio"
+msgid "portfoliobodypage"
+msgstr "نمونه کارها"
+
+#: .\templates\portfolio.html:87
+#, fuzzy
+#| msgid "servicespagecard1header"
+msgid "portfoliocard1header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\portfolio.html:90
+msgid "portfoliocard1body"
+msgstr ""
+
+#: .\templates\portfolio.html:93 .\templates\portfolio.html:113
+#: .\templates\portfolio.html:134 .\templates\portfolio.html:155
+msgid "portfoliocardbutton"
+msgstr ""
+
+#: .\templates\portfolio.html:108
+#, fuzzy
+#| msgid "servicespagecard2header"
+msgid "portfoliocard2header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\portfolio.html:111
+msgid "portfoliocard2body"
+msgstr ""
+
+#: .\templates\portfolio.html:128
+#, fuzzy
+#| msgid "servicespagecard3header"
+msgid "portfoliocard3header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\portfolio.html:131
+msgid "portfoliocard3body"
+msgstr ""
+
+#: .\templates\portfolio.html:149
+#, fuzzy
+#| msgid "servicespagecard4header"
+msgid "portfoliocard4header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\portfolio.html:152
+msgid "portfoliocard4body"
+msgstr ""
+
+#: .\templates\services.html:57
+msgid "servicespageheadertext"
+msgstr ""
+
+#: .\templates\services.html:93
+msgid "servicesbodydirection"
+msgstr "rtl"
+
+#: .\templates\services.html:115
+msgid "servicespagecard1header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\services.html:117
+msgid "servicespagecard1paragraph1"
+msgstr ""
+
+#: .\templates\services.html:119
+msgid "servicespagecard1paragraph2"
+msgstr ""
+
+#: .\templates\services.html:139
+msgid "servicespagecard2header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\services.html:141
+msgid "servicespagecard2paragraph1"
+msgstr ""
+
+#: .\templates\services.html:143
+msgid "servicespagecard2paragraph2"
+msgstr ""
+
+#: .\templates\services.html:162
+msgid "servicespagecard3header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\services.html:164
+msgid "servicespagecard3paragraph1"
+msgstr ""
+
+#: .\templates\services.html:166
+msgid "servicespagecard3paragraph2"
+msgstr ""
+
+#: .\templates\services.html:187
+msgid "servicespagecard4header"
+msgstr "اطلاعات بیشتر"
+
+#: .\templates\services.html:189
+msgid "servicespagecard4paragraph1"
+msgstr ""
+
+#: .\templates\services.html:191
+msgid "servicespagecard4paragraph2"
+msgstr ""
