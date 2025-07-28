@@ -1,0 +1,228 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Dream</title>
+	<!-- Bootstrap Styles-->
+    <link href="{% static 'assets/css/bootstrap.css'%}" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="{% static 'assets/css/font-awesome.css'%}" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="{% static 'assets/css/custom-styles.css'%}" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+   <style>
+    #cke_1_resizer{
+        display:none;
+    }
+
+
+
+    #page-wrapper{
+     margin:0 260px 0 0;
+    }
+    @media (max-width:957px) {
+        #page-wrapper{
+            margin:0px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div dir="rtl" id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div style="float:right" class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="text-align:right;" class="navbar-brand" href={%url 'home'%}>Dream</a>
+            </div>
+
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav  class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="" href={%url 'profile'%}><i class="fa fa-fw fa-home"></i> پروفایل</a>
+                    </li>
+                    <li>
+                        <a class="" href={%url 'home'%}><i class="fa fa-fw fa-home"></i> بازگشت به سایت</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap"></i> خدمات<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href={% url 'fill_services' %}>آنالیز</a>
+                            </li>
+                            <li>
+                                <a href="#">گرافیک</a>
+                            </li>
+                            <li>
+                                <a href="#">برنامه نویسی</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'change_details_page' %}><i class="fa fa-fw fa-ticket"></i> تغییر اطلات پروفایل</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'change_password_page' %}><i class="fa fa-fw fa-ticket"></i>تغییر رمز عبور</a>
+                    </li>
+
+                    <li>
+                        <a class="" href={% url 'all_tickets_user' %}><i class="fa fa-fw fa-ticket"></i> تیکت ها</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'active_orders' %}><i class="fa fa-fw fa-ticket"></i>سفارش های باز</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'done_orders' %}><i class="fa fa-fw fa-ticket"></i>سفارش های نکمیل شده</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'logout1' %}><i class="fa fa-fw fa-ticket"></i>خروج</a>
+                    </li>
+
+                    <hr>
+                    {% if user.roles == 'modir'%}
+                        <h6 style="color:white;text-align:center;">بخش مدیریت</h6>
+                        <li>
+                            <a class="" href={% url 'ticket_support_admins_open' %}><i class="fa fa-fw fa-ticket"></i>تیکت های پشتیبانی باز</a>
+                        </li>
+                        <li>
+                            <a class="" href={% url 'ticket_support_admins_open' %}><i class="fa fa-fw fa-ticket"></i>تیکت های پشتیبانی بسنه</a>
+                        </li>
+
+                        <li>
+                            <a class="" href={% url 'ticket_orders_admins'%}><i class="fa fa-fw fa-ticket"></i> تیکت های سفارشات باز</a>
+                        </li>
+                        <li>
+                            <a class="" href={% url 'ticket_orders_admins_complete'%}><i class="fa fa-fw fa-ticket"></i> تیکت های سفارشات تکمیل شده</a>
+                        </li>
+
+                        <li>
+                            <a class="" href={% url 'contact_open' %}><i class="fa fa-fw fa-ticket"></i>پیام های ارتباط با ما</a>
+                        </li>                
+                        <li>
+                            <a class="" href={% url 'contact_close' %}><i class="fa fa-fw fa-ticket"></i>پیام های ارتباط با ما جواب داده شده</a>
+                        </li>               
+                    
+                    {%endif%}
+                    </ul>
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div style="min-height:100%vh;" id="page-wrapper" >
+            <div style="min-height:100%vh;" id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        
+                        <p style="display:inline-block;background: #ecf3fc;margin-left: 8%;padding:8px;margin-bottom: 0px;" class="page-header">
+                            تاریخ ثبت :
+                            <b> {{ticket.created}}</b>
+                        </p>
+                        <p style="display:inline-block;margin-left: 8%;background: #ecf3fc;padding:8px;margin-bottom: 0px" class="page-header">
+                            وضعیت : 
+                            {% if ticket.state == True%}
+                                <b>باز</b>
+                            {%else%}
+                                <b>بسته</b>
+                            {%endif%}
+                        </p>
+                        <p style="display:inline-block;margin-left: 8%;background: #ecf3fc;padding:8px;margin-bottom: 0px" class="page-header">
+                            بخش مربوطه : 
+                            <b>{{ticket.category}}</b>
+                        </p>
+                        <p style="display:inline-block;margin-left: 8%;background: #ecf3fc;padding:8px;margin-bottom: 0px" class="page-header">
+                            نوع تیکت : 
+                            {% if ticket.order == False%}
+                                <b>پشتیبانی</b>
+                            {% else %}
+                                <b>ارائه خدمات</b>
+                            {%endif%}
+                        </p>
+                        {% if ticket.order == False%}
+                            <p style="display:inline-block;margin-left: 0;background: #58d34c;padding:8px;margin-bottom: 0px;text-decoration: none;border-radius: 5px;" class="page-header">
+                                <a style="color: white;text-decoration:none;" href={% url 'accept_order' ticket.id%}><b>پذیرفتن سفارش</b></a>
+                            </p>
+                        {% endif %}
+                        <br>
+                        <p style="display:inline-block;color:#2196f3;font-size: 26px;margin-top: 0;margin-bottom: 8px;border-bottom: none;" class="page-header">
+                            <b> {{ticket.title}}</b>
+                        </p>
+
+                    </div>
+                </div> 
+                <hr/ style="background-color: #b1bfce;height: 1px;margin-top: 0;">
+
+
+			  <div class="col-md-12">
+			<div >		
+                        {% for i in chats %}	
+                            {% if i.user != None %}
+                            <div style="background-color: #b1bfce;display:inline-block;" class="alert alert-warning ">
+                                <small style="font-weight: 900;">در تاریخ 22 آبان در ساعت 11:15 </small> <br><p  style="font-weight: 900;margin-top: -10px;margin-bottom: -22px;" ><small>شما:</small></p><br><p  style="margin-top: -22px;padding-top:5px;" >{{i.user|safe}}</p>
+                            </div>
+                            <br>
+                            {%else%}
+                        
+                                <div style="display:inline-block;" class="alert alert-warning">
+                                    <small style="font-weight: 900;">در تاریخ 22 آبان در ساعت 11:15 </small> <br><p  style="font-weight: 900;margin-top: -10px;margin-bottom: -22px;" ><small>پشتیبانی:</small></p><br><p  style="margin-top: -22px;padding-top:5px;" >{{i.support}}</p>
+                                </div>
+                                <br>
+                            {% endif %}
+                        {%endfor%}
+                        
+				</div>
+                {% if ticket.state == True %}
+                <form action='' method='POST'>
+                    {% csrf_token %}
+                    {{ChatForm.media}}
+                    {{ChatForm.as_p}}
+                    <input type="submit" value="submit">
+
+                </form>
+                {%endif%}
+			</div>					
+            	
+				</div>								
+
+
+
+
+
+                 <!-- /. ROW  -->
+
+                 <!-- /. ROW  -->
+				</div>
+
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js'%}"></script>
+      <!-- Bootstrap Js -->
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+    <!-- Metis Menu Js -->
+    <script src="{% static 'assets/js/jquery.metisMenu.js'%}"></script>
+      <!-- Custom Js -->
+    <script src="{% static 'assets/js/custom-scripts.js'%}"></script>
+    
+   
+</body>
+</html>

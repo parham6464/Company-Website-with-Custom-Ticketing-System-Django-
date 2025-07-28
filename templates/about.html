@@ -1,0 +1,380 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Free Bootstrap Theme | webthemez</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://webthemez.com" />
+<!-- css -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+<link href="{% static 'css/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+<link href="{% static 'css/jcarousel.css'%}" rel="stylesheet" />
+<link href="{% static 'css/flexslider.css'%}" rel="stylesheet"  />
+<link href="{% static 'js/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+<link href="{% static 'css/style33.css' %}" rel="stylesheet" />
+<link href="{% static 'css/main22.css' %}" rel="stylesheet" />
+<link href="{% static 'css/ionicons.css' %}" rel="stylesheet" />
+<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" />
+<link href="{% static 'css/owl.carousel.theme.min.css' %}" rel="stylesheet" />
+ 
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- start header -->
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  <a class="navbar-brand" href="index.html"><img src="{% static 'img/logo.png' %}" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+						{% if user.is_authenticated%}
+						<li><a href="{% url "profile" %}">{% trans "profilenav" %}</a></li>
+						{% else %}
+						<li><a href="{% url "login1" %}">{% trans "signuplogin" %}</a></li>
+						{% endif %}
+
+						<li><a href="pricing.html">{% trans "blognav" %}</a></li>
+						<li><a href="{% url 'about_us' %}">{% trans "aboutnav" %}</a></li>
+						<li><a href="{% url 'contact' %}">{% trans "homecontact" %}</a></li>
+						<li><a href="{% url 'portfolio' %}">{% trans "homeportfolio" %}</a></li>
+						<li><a href="{% url 'services' %}">{% trans "homeserv" %}</a></li>
+                        <li class="active"><a href="{% url 'home' %}">{% trans "homenav" %}</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header><!-- end header -->
+	<section dir="{% trans "servicespageheaderdirection" %}" id="inner-headline">
+	<div class="container">
+		<div class="row">
+			<div dir="{% trans "servicespageheaderdirection" %}" class="col-lg-12">
+				<h2 class="pageTitle">{% trans "aboutusBannerHeader" %}</h2>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	        <!-- main -->
+
+			<main role="main-inner-wrapper" class="container">
+
+        	
+
+				<div class="row">
+	
+				
+	
+					<section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+	
+						<article role="pge-title-content">
+	
+							<header>
+	
+								<h2><span>We Do</span> What we love to do.</h2>
+	
+							</header>
+	
+							<p>Over 40,000 customers use our themes to power their websites and we love them.</p>
+	
+						</article>
+	
+					</section>
+	
+					
+	
+					<section class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+	
+						<article class="about-content">
+	
+							<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc, fiant sollemnes in futurum.</p>
+	
+							<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consueum formas humanitatis per seacula quarta deciEodem modo tythepi, qui nunc, fiant sollemnes in futurum.</p>
+	
+						</article>
+	
+					</section>
+	
+					
+	
+					<div class="clearfix"></div>
+	
+			
+				<!-- About -->
+					<section class="about">
+						<div class="container page-bgc">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="title-box">
+										<p>Feel free to</p>
+										<h2 class="title mt0">Know ourselfs</h2>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="boxed">
+									<div class="col-sm-12">
+										<p class="inner-p">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+										</p>
+									</div>
+								</div>
+							</div>
+			
+						<!-- Services -->
+							<div class="service">
+								<div class="row">
+									<div class="boxed">
+										<div class="col-sm-4">
+											<div class="service-box">
+												<div class="service-title">
+													<div class="icon">
+														<span class="ion-ios-monitor"></span>
+													</div>
+													 <div class="mt-10">
+														DIY-Friendly
+													</div>
+												</div>
+												<p>
+													Class aptent taciti sociosqu litora torquent conubia nos per inceptos himenaeo Lorem Ipsum is simply dummy text.
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="service-box">
+												<div class="service-title">
+													<div class="icon">
+														<span class="ion-person"></span>
+													</div>
+													 <div class="mt-10">
+														Amazing support
+													</div>
+												</div>
+												<p>
+													Class aptent taciti sociosqu litora torquent conubia nos per inceptos himenaeo Lorem Ipsum is simply dummy text.
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="service-box">
+												<div class="service-title">
+													<div class="icon">
+														<span class="ion-ios-cloud-upload"></span>
+													</div>
+													 <div>
+														In the cloud
+													</div>
+												</div>
+												<p>
+													Class aptent taciti sociosqu litora torquent conubia nos per inceptos himenaeo Lorem Ipsum is simply dummy text.
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="service-box">
+												<div class="service-title">
+													<div class="icon">
+														<span class="ion-android-options"></span>
+													</div>
+													 <div class="mt-10">
+														Flexible
+													</div>
+												</div>
+												<p>
+													Class aptent taciti sociosqu litora torquent conubia nos per inceptos himenaeo Lorem Ipsum is simply dummy text.
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="service-box">
+												<div class="service-title">
+													<div class="icon">
+														<span class="ion-ios-color-wand"></span>
+													</div>
+													 <div class="mt-10">
+														Economical
+													</div>
+												</div>
+												<p>
+													Class aptent taciti sociosqu litora torquent conubia nos per inceptos himenaeo Lorem Ipsum is simply dummy text.
+												</p>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="service-box">
+												<div class="service-title">
+													<div class="icon">
+														<span class="ion-ios-cog"></span>
+													</div>
+													 <div class="mt-10">
+														Customizable
+													</div>
+												</div>
+												<p>
+													Class aptent taciti sociosqu litora torquent conubia nos per inceptos himenaeo Lorem Ipsum is simply dummy text.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+			
+						<!-- Machine Man -->
+							<div class="machine-man">
+								<div class="row">
+									<div class="boxed">
+										<div class="col-sm-8">
+											<h4 class="m-s-title">CES 2015 Control Product of the Year</h4>
+											<h1 class="m-p-title">Convert your smart device into the ultimate remote control</h1>
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+												tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+												quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+												consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+												cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+												proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+			
+						<!-- Team -->
+							<div class="team">
+								<div class="row">
+									<div class="boxed">
+										<div class="col-sm-12">
+											<div class="title-box">
+												<p>Meet our</p>
+												<h2 class="title mt0">Team Members</h2>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="team-box">
+												<div class="team-img">
+													<img class="team-img img-responsive" src="{% static 'img/team1.jpg' %}" alt="team">
+												</div>
+												<div class="team-img-detail">
+													<h4 class="member-name">Jonathan Smith</h4>
+													<h5 class="member-id">Founder &amp; CEO</h5>
+													<p>
+														Donec vehicula imperdiet justo, non viverra sapien egestas a. Aliquam ut sodales felis, eget iaculis erat.
+													</p>
+													<button style="margin-bottom:15px;" type="submit" class="btn btn-primary">{% trans "aboutusbutton" %}</button>
+													<div class="social">
+														<a href="#"><i class="ion-social-facebook"></i></a>
+														<a href="#"><i class="ion-social-twitter"></i></a>
+														<a href="#"><i class="ion-social-linkedin"></i></a>
+														<a href="#"><i class="ion-social-googleplus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="team-box">
+												<div class="team-img">
+													<img class="team-img img-responsive" src="{% static 'img/team1.jpg' %}" alt="team">
+												</div>
+												<div class="team-img-detail">
+													<h4 class="member-name">Jonathan Smith</h4>
+													<h5 class="member-id">Founder &amp; CEO</h5>
+													<p>
+														Donec vehicula imperdiet justo, non viverra sapien egestas a. Aliquam ut sodales felis, eget iaculis erat.
+													</p>
+													<button style="margin-bottom:15px;" type="submit" class="btn btn-primary">{% trans "aboutusbutton" %}</button>
+													<div class="social">
+														<a href="#"><i class="ion-social-facebook"></i></a>
+														<a href="#"><i class="ion-social-twitter"></i></a>
+														<a href="#"><i class="ion-social-linkedin"></i></a>
+														<a href="#"><i class="ion-social-googleplus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="team-box">
+												<div class="team-img">
+													<img class="team-img img-responsive" src="{% static 'img/team1.jpg' %}" alt="team">
+												</div>
+												<div class="team-img-detail">
+													<h4 class="member-name">Jonathan Smith</h4>
+													<h5 class="member-id">Founder &amp; CEO</h5>
+													<p>
+														Donec vehicula imperdiet justo, non viverra sapien egestas a. Aliquam ut sodales felis, eget iaculis erat.
+													</p>
+													<button style="margin-bottom:15px;" type="submit" class="btn btn-primary">{% trans "aboutusbutton" %}</button>
+													<div class="social">
+														<a href="#"><i class="ion-social-facebook"></i></a>
+														<a href="#"><i class="ion-social-twitter"></i></a>
+														<a href="#"><i class="ion-social-linkedin"></i></a>
+														<a href="#"><i class="ion-social-googleplus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="team-box">
+												<div class="team-img">
+													<img class="team-img img-responsive" src="{% static 'img/team1.jpg' %}" alt="team">
+												</div>
+												<div class="team-img-detail">
+													<h4 class="member-name">Jonathan Smith</h4>
+													<h5 class="member-id">Founder &amp; CEO</h5>
+													<p>
+														Donec vehicula imperdiet justo, non viverra sapien egestas a. Aliquam ut sodales felis, eget iaculis erat.
+													</p>
+													<button style="margin-bottom:15px;" type="submit" class="btn btn-primary">{% trans "aboutusbutton" %}</button>
+													<div class="social">
+														<a href="#"><i class="ion-social-facebook"></i></a>
+														<a href="#"><i class="ion-social-twitter"></i></a>
+														<a href="#"><i class="ion-social-linkedin"></i></a>
+														<a href="#"><i class="ion-social-googleplus"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+			
+	</section>
+
+
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox-media.js' %}"></script> 
+<script src="{% static 'js/portfolio/jquery.quicksand.js' %}"></script>
+<script src="{% static 'js/portfolio/setting.js' %}"></script>
+<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script src="{% static 'js/animate.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/script33.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+</body>
+</html>

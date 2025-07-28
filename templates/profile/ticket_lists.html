@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Dream</title>
+	<!-- Bootstrap Styles-->
+    <link href="{% static 'assets/css/bootstrap.css'%}" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="{% static 'assets/css/font-awesome.css'%}" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="{% static 'assets/css/custom-styles.css'%}" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <style>
+    #page-wrapper{
+     margin:0 260px 0 0;
+    }
+    @media (max-width:957px) {
+        #page-wrapper{
+            margin:0px;
+        }
+    }
+</style>
+
+</head>
+<body>
+    <div dir="rtl" id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div style="float:right" class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="text-align:right;" class="navbar-brand" href={%url 'home'%}>Dream</a>
+            </div>
+
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav  class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="" href={%url 'profile'%}><i class="fa fa-fw fa-home"></i> پروفایل</a>
+                    </li>
+                    <li>
+                        <a class="" href={%url 'home'%}><i class="fa fa-fw fa-home"></i> بازگشت به سایت</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap"></i> خدمات<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href={% url 'fill_services' %}>آنالیز</a>
+                            </li>
+                            <li>
+                                <a href="#">گرافیک</a>
+                            </li>
+                            <li>
+                                <a href="#">برنامه نویسی</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'change_details_page' %}><i class="fa fa-fw fa-ticket"></i> تغییر اطلات پروفایل</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'change_password_page' %}><i class="fa fa-fw fa-ticket"></i>تغییر رمز عبور</a>
+                    </li>
+
+                    <li>
+                        <a class="" href={% url 'all_tickets_user' %}><i class="fa fa-fw fa-ticket"></i> تیکت ها</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'active_orders' %}><i class="fa fa-fw fa-ticket"></i>سفارش های باز</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'done_orders' %}><i class="fa fa-fw fa-ticket"></i>سفارش های نکمیل شده</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'logout1' %}><i class="fa fa-fw fa-ticket"></i>خروج</a>
+                    </li>
+
+                    <hr>
+                    {% if user.roles == 'modir'%}
+                        <h6 style="color:white;text-align:center;">بخش مدیریت</h6>
+                        <li>
+                            <a class="" href={% url 'ticket_support_admins_open' %}><i class="fa fa-fw fa-ticket"></i>تیکت های پشتیبانی باز</a>
+                        </li>
+                        <li>
+                            <a class="" href={% url 'ticket_support_admins_open' %}><i class="fa fa-fw fa-ticket"></i>تیکت های پشتیبانی بسنه</a>
+                        </li>
+
+                        <li>
+                            <a class="" href={% url 'ticket_orders_admins'%}><i class="fa fa-fw fa-ticket"></i> تیکت های سفارشات باز</a>
+                        </li>
+                        <li>
+                            <a class="" href={% url 'ticket_orders_admins_complete'%}><i class="fa fa-fw fa-ticket"></i> تیکت های سفارشات تکمیل شده</a>
+                        </li>
+
+                        <li>
+                            <a class="" href={% url 'contact_open' %}><i class="fa fa-fw fa-ticket"></i>پیام های ارتباط با ما</a>
+                        </li>                
+                        <li>
+                            <a class="" href={% url 'contact_close' %}><i class="fa fa-fw fa-ticket"></i>پیام های ارتباط با ما جواب داده شده</a>
+                        </li>               
+                    
+                    {%endif%}
+                    </ul>
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div style="min-height:100vh;" id="page-wrapper" >
+            <div style="min-height:120vh;" id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Tickets
+                        </h1>
+                    </div>
+                </div> 
+
+
+                <a style="text-decoration:none; margin-bottom: 10px;padding-left: 30px;font-weight: 600;" href={% url 'open_ticket'%}><p>باز کردن تیکت جدید</p></a>
+                
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             ticket lists
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr >
+                                            <th style="text-align: right;">عنوان تیکت</th>
+                                            <th style="text-align: right;">دپارتمان</th>
+                                            <th style="text-align: right;">نوع خدمات</th>
+                                            <th style="text-align: right;">وضعیت تیکت</th>
+                                            <th style="text-align: right;"></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for i in tickets %}
+                                        <tr class="odd gradeX">
+                                            <td>{{i.title}}</td>
+                                            <td>{{i.category}}</td>
+                                            {% if i.order == False%}
+                                                <td>پشتیبانی</td>
+                                            {% else %}
+                                                <td>ارائه خدمات</td>
+                                            {%endif%}
+
+                                            {% if i.state == False%}
+                                                {% if i.view == True %}
+                                                    <td>بسته - خوانده شده</td>
+                                                {%else%}
+                                                <td>بسته - خوانده نشده</td>
+                                                {% endif %}
+                                            {%else%}
+                                                {% if i.view == True %}
+                                                    <td>باز - خوانده شده</td>
+                                                {%else%}
+                                                    <td>باز - خوانده نشده</td>
+                                                {% endif %}
+                                            {% endif %}
+
+                                            <td class="center"><a href={% url 'chat' i.id%}><button  type="submit" class="btn btn-primary"> مشاهده تیکت</button></a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
+
+                    <div aria-label="Page navigation example" style="margin-top:50px;margin-bottom:50px;text-align:center">
+                        <ul class="pagination justify-content-center">
+                          {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                          {% endif %}
+                          <li class="page-item"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
+                          {% if page_obj.has_next %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                          {% endif %}
+                            
+                        </ul>
+                      </div>
+                
+                 <!-- /. ROW  -->
+
+                 <!-- /. ROW  -->
+				</div>
+
+             <!-- /. PAGE INNER  -->
+
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+
+         
+        </div>
+     <!-- /. WRAPPER  -->
+
+
+
+
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js'%}"></script>
+      <!-- Bootstrap Js -->
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+    <!-- Metis Menu Js -->
+    <script src="{% static 'assets/js/jquery.metisMenu.js'%}"></script>
+      <!-- Custom Js -->
+    <script src="{% static 'assets/js/custom-scripts.js'%}"></script>
+    
+   
+</body>
+</html>

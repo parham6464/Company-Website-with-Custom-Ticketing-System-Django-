@@ -1,0 +1,270 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Template</title>
+    <meta name="description" content="Blog Template Created With HTML, CSS, JavaScript">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Blog Template">
+    <meta name="author" content="Mohammad Reza Ebrahimi">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jcarousel.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/flexslider.css'%}" rel="stylesheet"  />
+    <link href="{% static 'js/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style33.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="{% static 'blog/style/index.css'%}">
+
+    <style>
+
+
+
+        .container{
+            width:100%;
+            padding:0px;
+        }
+        header .navbar
+        {
+            padding:0px 30x 0px 30px;
+            padding-right:194px;
+            padding-left:194px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"><img src="{% static 'img/logo.png' %}" alt="logo"/></a>
+                    </div>
+                    <div class="navbar-collapse collapse " >
+                        <ul class="nav navbar-nav">
+                            <li><a href="{% url "blogmain" %}">{% trans "blognav" %}</a></li>
+                            <li><a href="{% url 'about_us' %}">{% trans "aboutnav" %}</a></li>
+                            <li><a href="{% url 'contact' %}">{% trans "homecontact" %}</a></li>
+                            <li><a href="{% url 'portfolio' %}">{% trans "homeportfolio" %}</a></li>
+                            <li><a href="{% url 'services' %}">{% trans "homeserv" %}</a></li>
+                            <li class="active"><a href="{% url 'home' %}">{% trans "homenav" %}</a></li> 
+                            
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <section class="slider">
+                <img src="{% static 'blog/images/top-image.jpg'%}" alt="Slider Image" loading="lazy">
+                <div class="content">
+                    <h2>The Backpacker</h2>
+                    <p>Jobs fill your pockets, adventures fill your soul.</p>
+                </div>
+            </section>
+
+        </header>
+        
+
+        <div class="main-content">
+
+            <div class="blog" id="Blog">
+
+                <article class="posts">
+                    {%if search_result %}
+                        {% for i in posts %}
+                            {% if i.title|lower in search_result|lower%}
+                                <div class="post">
+                                    <div class="post-image">
+                                        <img width="250px" height="250px" src="{{i.image.url}}" alt="How to Ace Your Life Image" loading="lazy">
+                                    </div>
+                                    <div class="post-content">
+                                        <a class="post-title">{{i.title}}</a>
+                                        <p class="post-info">Posted on {{i.created|date:'Y M'}}</p>
+                                        <p class="post-summary">
+                                            {{i.content|slice:100|safe}}
+                                        </p>
+                                    </div>
+                                    <div class="post-read-more">
+                                        <a href={%url 'details' i.id%}><span class="post-read-more">...</span></a>
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {% endfor %}
+                    {%else%}
+                        {% for i in posts %}
+                        <div class="post">
+                            <div class="post-image">
+                                <img width="250px" height="250px" src="{{i.image.url}}" alt="How to Ace Your Life Image" loading="lazy">
+                            </div>
+                            <div class="post-content">
+                                <a class="post-title">{{i.title}}</a>
+                                <p class="post-info">Posted on {{i.created|date:'Y M'}}</p>
+                                <p class="post-summary">
+                                    {{i.content|slice:100|safe}}
+                                </p>
+                            </div>
+                            <div class="post-read-more">
+                                <a href={%url 'details' i.id%}><span class="post-read-more">...</span></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {%endif %}
+               
+                </article>
+
+                <div aria-label="Page navigation example" style="margin-top:50px;margin-bottom:50px">
+                    <ul class="pagination justify-content-center">
+                      {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                      {% endif %}
+                      <li class="page-item"><a class="page-link" href="#">{{ page_obj.number }}</a></li>
+                      {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                      {% endif %}
+                        
+                    </ul>
+                  </div>
+            
+            </div>
+
+            <div class="sidebar">
+                <div class="advertisement-side">
+                    <h2>SEARCH</h2>
+
+                <form action='' method="post" role="search">
+                    {% csrf_token %}
+                    <input style="width:300px;" id="search" class="form-control" type="search" placeholder="Search..." name='title' autofocus required />
+                    <button style="width:300px;" type="submit"  class="form-control" class="btn btn-primary">Search</button>
+    
+                  </form>
+                </div>
+                <div class="popular-posts-side">
+                    <h2>POPULAR POSTS</h2>
+                    <div class="popular-posts">
+
+                        {% for i in popular %}
+                        <div class="popular-post">
+                            <div class="popular-post-image">
+                                <img src="{{i.image.url}}" alt="How to Ace Your Life Image" loading="lazy">
+                            </div>
+                            <div class="popular-post-content">
+                                <a href="#" class="popular-post-title">{{i.title}}</a>
+                                <p class="popular-post-desc">
+                                    {{i.content|slice:30|safe}}
+                                </p>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="archives-side">
+                    <h2>ARCHIVES</h2>
+                    {% for i , j in archives.items %}
+                    <div class="archive-box"><a href={% url "archive_search" i j %}>{{i}} {{j}}</a></div>
+                    {% endfor %}
+                </div>
+
+                <div class="social-side">
+                    <h2>LETS GET SOCIAL!</h2>
+                    <div>
+                        <a href="#"><img src="{% static 'blog/images/social/twitter.png'%}" alt="Twitter Logo" loading="lazy"></a>
+                        <a href="#"><img src="{% static 'blog/images/social/facebook.png'%}" alt="Facebook Logo" loading="lazy"></a>
+                        <a href="#"><img src="{% static 'blog/images/social/pinterest.png'%}" alt="Pinterest Logo" loading="lazy"></a>
+                        <a href="#"><img src="{% static 'blog/images/social/linkedin.png'%}" alt="Linkedin Logo" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <div class="advertisement-side">
+                    <h2>ADVERTISEMENT</h2>
+                    <div class="my-advertisement-box">
+                        <p>Banner Ad 300x300</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footerBoxes">
+
+                <div class="footerBox">
+                    <h3>LOREM IPSUM</h3>
+                    <hr>
+                    <p>
+                        Sed ut perspiciatis unde omnis
+                        iste natus voluptatem fringilla
+                        tempor dignissim at, pretium et arcu.
+                        Sed ut perspiciatis unde omnis iste
+                        tempor dignissim at, pretium et arcu
+                        natus voluptatem fringilla.
+                    </p>
+                </div>
+
+                <div class="footerBox">
+                    <h3>LOREM IPSUM</h3>
+                    <hr>
+                    <p>
+                        Sed ut perspiciatis unde omnis
+                        iste natus voluptatem fringilla
+                        tempor dignissim at, pretium et arcu.
+                        Sed ut perspiciatis unde omnis iste
+                        tempor dignissim at, pretium et arcu
+                        natus voluptatem fringilla.
+                    </p>
+                </div>
+
+                <div class="footerBox">
+                    <h3>LOREM IPSUM</h3>
+                    <hr>
+                    <p>
+                        Sed ut perspiciatis unde omnis
+                        iste natus voluptatem fringilla
+                        tempor dignissim at, pretium et arcu.
+                        Sed ut perspiciatis unde omnis iste
+                        tempor dignissim at, pretium et arcu
+                        natus voluptatem fringilla.
+                    </p>
+                </div>
+
+            </div>
+            <hr class="splitter">
+            <p class="copy-right">©2021 Blog Template | Mohammad Reza Ebrahimi</p>
+        </footer>
+
+    </div>
+    
+    <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script src="{% static 'blog/js/menu.js'%}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox-media.js' %}"></script> 
+    <script src="{% static 'js/portfolio/jquery.quicksand.js' %}"></script>
+    <script src="{% static 'js/portfolio/setting.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'js/animate.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/owl-carousel/owl.carousel.js' %}"></script>
+    
+</body>
+</html>

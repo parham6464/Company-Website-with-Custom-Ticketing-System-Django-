@@ -1,0 +1,217 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Bootstrap Admin Template : Dream</title>
+	<!-- Bootstrap Styles-->
+    <link href="{% static 'assets/css/bootstrap.css'%}" rel="stylesheet" />
+     <!-- FontAwesome Styles-->
+    <link href="{% static 'assets/css/font-awesome.css'%}" rel="stylesheet" />
+        <!-- Custom Styles-->
+    <link href="{% static 'assets/css/custom-styles.css'%}" rel="stylesheet" />
+     <!-- Google Fonts-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <style>
+    #page-wrapper{
+     margin:0 260px 0 0;
+    }
+    @media (max-width:957px) {
+        #page-wrapper{
+            margin:0px;
+        }
+    }
+    body , html{
+        height: 100%
+    }
+</style>
+
+</head>
+<body>
+    <div dir="rtl" id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div style="float:right" class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a style="text-align:right;" class="navbar-brand" href={%url 'home'%}>Dream</a>
+            </div>
+
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav  class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="" href={%url 'profile'%}><i class="fa fa-fw fa-home"></i> پروفایل</a>
+                    </li>
+                    <li>
+                        <a class="" href={%url 'home'%}><i class="fa fa-fw fa-home"></i> بازگشت به سایت</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap"></i> خدمات<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href={% url 'fill_services' %}>آنالیز</a>
+                            </li>
+                            <li>
+                                <a href="#">گرافیک</a>
+                            </li>
+                            <li>
+                                <a href="#">برنامه نویسی</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'change_details_page' %}><i class="fa fa-fw fa-ticket"></i> تغییر اطلات پروفایل</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'change_password_page' %}><i class="fa fa-fw fa-ticket"></i>تغییر رمز عبور</a>
+                    </li>
+
+                    <li>
+                        <a class="" href={% url 'all_tickets_user' %}><i class="fa fa-fw fa-ticket"></i> تیکت ها</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'active_orders' %}><i class="fa fa-fw fa-ticket"></i>سفارش های باز</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'done_orders' %}><i class="fa fa-fw fa-ticket"></i>سفارش های نکمیل شده</a>
+                    </li>
+                    <li>
+                        <a class="" href={% url 'logout1' %}><i class="fa fa-fw fa-ticket"></i>خروج</a>
+                    </li>
+
+                    <hr>
+                    {% if user.roles == 'modir'%}
+                        <h6 style="color:white;text-align:center;">بخش مدیریت</h6>
+                        <li>
+                            <a class="" href={% url 'ticket_support_admins_open' %}><i class="fa fa-fw fa-ticket"></i>تیکت های پشتیبانی باز</a>
+                        </li>
+                        <li>
+                            <a class="" href={% url 'ticket_support_admins_open' %}><i class="fa fa-fw fa-ticket"></i>تیکت های پشتیبانی بسنه</a>
+                        </li>
+
+                        <li>
+                            <a class="" href={% url 'ticket_orders_admins'%}><i class="fa fa-fw fa-ticket"></i> تیکت های سفارشات باز</a>
+                        </li>
+                        <li>
+                            <a class="" href={% url 'ticket_orders_admins_complete'%}><i class="fa fa-fw fa-ticket"></i> تیکت های سفارشات تکمیل شده</a>
+                        </li>
+
+                        <li>
+                            <a class="" href={% url 'contact_open' %}><i class="fa fa-fw fa-ticket"></i>پیام های ارتباط با ما</a>
+                        </li>                
+                        <li>
+                            <a class="" href={% url 'contact_close' %}><i class="fa fa-fw fa-ticket"></i>پیام های ارتباط با ما جواب داده شده</a>
+                        </li>               
+                    
+                    {%endif%}
+                    </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div style="min-height:100vh;" id="page-wrapper" >
+            <div style="min-height:120vh;" id="page-inner">
+			 <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            user profile
+                        </h1>
+                    </div>
+                </div> 
+
+
+
+                <div dir="rtl" class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                            اطلاعات حساب کاربری
+                        </div>
+                       
+                        <div class="panel-body">
+                             <p>
+                                نام کاربری: {{user.username}}
+                        </p>
+                        <p> ایمیل: {{user.email}} </p>
+
+                        <p> شماره موبایل: {{user.phone_number}} </p>
+                        </div>
+                        
+                    </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                   <a href="{% url 'active_orders' %}"> <div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-green">
+                            <div class="panel-body">
+                                <i class="fa fa-star-half-empty fa-5x"></i>
+                                <h3>{{active_orders|length}}</h3>
+                            </div>
+                            <div class="panel-footer back-footer-green">
+                                سفارش های فعال
+
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="{% url 'done_orders'%}"><div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-blue">
+                            <div class="panel-body">
+                                <i class="fa fa-star fa-5x"></i>
+                                <h3>{{done_orders|length}} </h3>
+                            </div>
+                            <div class="panel-footer back-footer-blue">
+                                سفارش های تکمیل شده
+
+                            </div>
+                        </div>
+                    </div> </a>
+                    <a href="{% url 'all_tickets_user'%}"><div class="col-md-4 col-sm-12 col-xs-12">
+                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                            <div class="panel-body">
+                                <i class="fa fa fa-comments fa-5x"></i>
+                                <h3>{{all_tickets|length}} </h3>
+                            </div>
+                            <div class="panel-footer back-footer-red">
+                                تیک های باز
+
+                            </div>
+                        </div>
+                    </div></a>
+                </div>
+
+
+                 <!-- /. ROW  -->
+
+                 <!-- /. ROW  -->
+				</div>
+
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="{% static 'assets/js/jquery-1.10.2.js'%}"></script>
+      <!-- Bootstrap Js -->
+    <script src="{% static 'assets/js/bootstrap.min.js'%}"></script>
+    <!-- Metis Menu Js -->
+    <script src="{% static 'assets/js/jquery.metisMenu.js'%}"></script>
+      <!-- Custom Js -->
+    <script src="{% static 'assets/js/custom-scripts.js'%}"></script>
+    
+   
+</body>
+</html>

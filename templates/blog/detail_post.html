@@ -1,0 +1,321 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Sample Post</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/fancybox/jquery.fancybox.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jcarousel.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/flexslider.css'%}" rel="stylesheet"  />
+    <link href="{% static 'js/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style33.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="{% static 'blog/style/clean-blog.min.css'%}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        header .navbar {
+            margin-bottom: 0;
+        }
+        
+        .navbar-default {
+            border: none;
+        }
+        
+        .navbar-brand {
+            color: #222;
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1em;
+            letter-spacing: -1px;
+            margin-top: 20px;
+            padding: 0 0 0 15px;
+        }
+        .navbar-default .navbar-brand{
+        color: #2FADDE;
+        }
+        
+        header .navbar-collapse  ul.navbar-nav {
+            float: right;
+            margin-right: 0;
+        }
+        
+        header .navbar-default{
+            background-color: #FFFFFF; 
+        }
+        
+        header .nav li a:hover,
+        header .nav li a:focus,
+        header .nav li.active a,
+        header .nav li.active a:hover,
+        header .nav li a.dropdown-toggle:hover,
+        header .nav li a.dropdown-toggle:focus,
+        header .nav li.active ul.dropdown-menu li a:hover,
+        header .nav li.active ul.dropdown-menu li.active a{
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        
+        
+        header .navbar-default .navbar-nav > .open > a,
+        header .navbar-default .navbar-nav > .open > a:hover,
+        header .navbar-default .navbar-nav > .open > a:focus {
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        
+        
+        header .navbar {
+            min-height: 70px; 
+            padding:18px 0;
+        }
+        
+        header .navbar-nav > li  {
+            padding-bottom: 12px;
+            padding-top: 12px;
+        }
+        
+        header  .navbar-nav > li > a {
+            padding-bottom: 6px;
+            padding-top: 5px;
+            margin-left: 2px;
+            line-height: 30px;
+            font-weight: 700;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+        
+        
+        .dropdown-menu li a:hover {
+            color: #fff !important;
+        }
+        
+        header .nav .caret {
+            border-bottom-color: #f5f5f5;
+            border-top-color: #f5f5f5;
+        }
+        .navbar-default .navbar-nav > .active > a,
+        .navbar-default .navbar-nav > .active > a:hover,
+        .navbar-default .navbar-nav > .active > a:focus {
+          background-color: #fff;
+        }
+        .navbar-default .navbar-nav > .open > a,
+        .navbar-default .navbar-nav > .open > a:hover,
+        .navbar-default .navbar-nav > .open > a:focus {
+          background-color:  #fff;
+        }	
+            
+        
+        .dropdown-menu  {
+            box-shadow: none;
+            border-radius: 0;
+            border: none;
+        }
+        
+        .dropdown-menu li:last-child  {
+            padding-bottom: 0 !important;
+            margin-bottom: 0;
+        }
+        
+        header .nav li .dropdown-menu  {
+           padding: 0;
+        }
+        
+        header .nav li .dropdown-menu li a {
+           line-height: 28px;
+           padding: 3px 12px;
+        }
+        
+        /* --- menu --- */
+        
+        header .navigation {
+            float:right;
+        }
+        
+        header ul.nav li {
+            border:none;
+            margin:0;
+        }
+        
+        header ul.nav li a {	
+            font-size:12px;
+            border:none;
+            font-weight:700;
+            text-transform:uppercase;
+        }
+        
+        header ul.nav li ul li a {	
+            font-size:12px;
+            border:none;
+            font-weight:300;
+            text-transform:uppercase;
+        }
+        
+        
+        .navbar .nav > li > a {
+          color: #6C6C6C;
+          text-shadow: none;
+          /* border: 1px solid rgba(255, 255, 255, 0) !important; */
+        }
+        
+        .navbar .nav a:hover {
+            background:none;
+        }
+        
+        .navbar .nav > .active > a,.navbar .nav > .active > a:hover {
+            background:none;
+            font-weight:700;
+        }
+        
+        .navbar .nav > .active > a:active,.navbar .nav > .active > a:focus {
+            background:none;
+            outline:0;
+            font-weight:700;
+        }
+        
+        .navbar .nav li .dropdown-menu {
+            z-index:2000;
+        }
+        
+        header ul.nav li ul {
+            margin-top:1px;
+        }
+        header ul.nav li ul li ul {
+            margin:1px 0 0 1px;
+        }
+        .dropdown-menu .dropdown i {
+            position:absolute;
+            right:0;
+            margin-top:3px;
+            padding-left:20px;
+        }
+        
+        .navbar .nav > li > .dropdown-menu:before {
+          display: inline-block;
+          border-right: none;
+          border-bottom: none;
+          border-left: none;
+          border-bottom-color: none;
+          content:none;
+        }
+        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+        color: #37A691;  
+        /* background: #52C2AD; */
+        /* border: 1px solid #3AA994 !important; */
+        }
+        
+        
+        ul.nav li.dropdown a {
+            z-index:1000;
+            display:block;
+        }
+
+
+
+        @media (max-width: 480px) {
+            {% comment %} #postpic{
+                max-width:480px;
+            } {% endcomment %}
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+	<header style="font-family:'Open Sans', Arial, sans-serif">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="{% static 'img/logo.png' %}" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse " >
+                    <ul class="nav navbar-nav">
+						<li><a href="{% url "blogmain" %}">{% trans "blognav" %}</a></li>
+						<li><a href="{% url 'about_us' %}">{% trans "aboutnav" %}</a></li>
+						<li><a href="{% url 'contact' %}">{% trans "homecontact" %}</a></li>
+						<li><a href="{% url 'portfolio' %}">{% trans "homeportfolio" %}</a></li>
+						<li><a href="{% url 'services' %}">{% trans "homeserv" %}</a></li>
+                        <li class="active"><a href="{% url 'home' %}">{% trans "homenav" %}</a></li> 
+						
+						
+                        
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+	</header>
+    <!-- Post Content -->
+    
+    <article>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <section style="margin-top:30px">
+                        <img id='postpic' width="710px" height="300px" src={{post.image.url}} alt="" loading="lazy" style="width:100%;object-fit:cover;">
+                    </section>
+                    {{post.content|safe}}
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'blog/js/clean-blog.min.js'%}"></script>
+
+</body>
+
+</html>
