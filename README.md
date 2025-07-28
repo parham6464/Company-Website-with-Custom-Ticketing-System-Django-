@@ -98,9 +98,6 @@ i hope you like it and make sure to follow installation path.
    ```py
    python manage.py runserver
    ```
-5. After the server is up go to admin page just add /admin to base IP
-6. then go and create all months and years for the database
-7. thats it you done :)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
